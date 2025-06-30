@@ -1,5 +1,4 @@
-'''java
-### Event Ticket Booking System
+# Event Ticket Booking System
 
 A simple Java-based web application using Javalin framework and MongoDB for backend, allowing users to register, login, view events
 and book tickets with QR code generation and email notifications.
