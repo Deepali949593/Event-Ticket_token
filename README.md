@@ -2,7 +2,7 @@
 ```markdown
 # Event Ticket Booking System
 
-A simple Java-based web application using **Javalin** framework and **MongoDB** for backend, allowing users to register, login, view events, and book tickets with QR code generation and email notifications.
+A simple Java-based web application using <b>Javalin</b> framework and **MongoDB** for backend, allowing users to register, login, view events, and book tickets with QR code generation and email notifications.
 
 ---
 
