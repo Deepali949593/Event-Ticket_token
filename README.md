@@ -1,10 +1,7 @@
-
 # Event Ticket Booking System
 
 A simple Java-based web application using Javalin framework and MongoDB for backend, allowing users to register, login, view events
 and book tickets with QR code generation and email notifications.
-
-
 
 ## Features
 
@@ -17,8 +14,6 @@ and book tickets with QR code generation and email notifications.
 - MongoDB used to store user data
 - Simple UI with HTML forms and JavaScript fetch API
 
-
-
 ## Technologies Used
 
 - Java 17+
@@ -29,6 +24,7 @@ and book tickets with QR code generation and email notifications.
 - Maven for dependency management
 
 
+
 ![Registration](src/main/resources/public/img/ss1.png)
 
 ![Login](src/main/resources/public/img/ss2.png)
@@ -37,7 +33,9 @@ and book tickets with QR code generation and email notifications.
 
 ![Booking](src/main/resources/public/img/ss4.png)
 
+![Booking](src/main/resources/public/img/ss5.png)
 
+![Booking](src/main/resources/public/img/ss6.png)
 
 ---
 
@@ -112,19 +110,12 @@ private static final MongoDatabase database = mongoClient.getDatabase("eventDB")
 public static MongoDatabase getDatabase() {
     return database;
 }
-````
 
-* Connects to local MongoDB instance.
-* Returns the `eventDB` database object.
-* Used by DAOs (`UserDAO` and `EventDAO`) for CRUD operations.
-
----
-
-## Sample Code Snippets
-
-### Password Generation
-
-```java
+Sample Code Snippets
+Password Generation
+java
+Copy
+Edit
 private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 private static final SecureRandom random = new SecureRandom();
 
@@ -135,11 +126,10 @@ private static String generateRandomPassword(int length) {
     }
     return sb.toString();
 }
-```
-
-### Sending Email with Password
-
-```java
+Sending Email with Password
+java
+Copy
+Edit
 public static void sendEmail(String to, String password) {
     final String from = "your.email@gmail.com";
     final String appPassword = "your-app-password";
@@ -167,11 +157,10 @@ public static void sendEmail(String to, String password) {
         e.printStackTrace();
     }
 }
-```
-
-### Generating QR Code
-
-```java
+Generating QR Code
+java
+Copy
+Edit
 public static String generateQRCode(String text, String email) {
     try {
         QRCodeWriter writer = new QRCodeWriter();
@@ -187,16 +176,17 @@ public static String generateQRCode(String text, String email) {
         return null;
     }
 }
-```
+Notes
+Make sure MongoDB is running and accessible before starting the server.
+
+Replace the email credentials with your own for email functionality.
+
+For production, consider environment variables or config files to secure sensitive data.
+
+Static HTML files are served from resources/public/ folder.
+
+yaml
+Copy
+Edit
 
 ---
-
-## Notes
-
-* Make sure MongoDB is running and accessible before starting the server.
-* Replace the email credentials with your own for email functionality.
-* For production, consider environment variables or config files to secure sensitive data.
-* Static HTML files are served from `resources/public/` folder.
-
----
-
