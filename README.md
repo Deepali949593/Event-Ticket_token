@@ -25,17 +25,23 @@ and book tickets with QR code generation and email notifications.
 
 
 
-![Registration](src/main/resources/public/img/ss1.png)
+<img src="src/main/resources/public/img/ss1.png" alt="Registration" width="50%"/>
+<br/>
 
-![Login](src/main/resources/public/img/ss2.png)
+<img src="src/main/resources/public/img/ss2.png" alt="Login" width="50%"/>
+<br/>
 
-![Events](src/main/resources/public/img/ss3.png)
+<img src="src/main/resources/public/img/ss3.png" alt="Events" width="50%"/>
+<br/>
 
-![Booking](src/main/resources/public/img/ss4.png)
+<img src="src/main/resources/public/img/ss4.png" alt="Booking Step 1" width="50%"/>
+<br/>
 
-![Booking](src/main/resources/public/img/ss5.png)
+<img src="src/main/resources/public/img/ss5.png" alt="Booking Step 2" width="50%"/>
+<br/>
 
-![Booking](src/main/resources/public/img/ss6.png)
+<img src="src/main/resources/public/img/ss6.png" alt="Booking Step 3" width="50%"/>
+
 
 ---
 
@@ -180,6 +186,4 @@ Notes
 - Replace the email credentials with your own for email functionality.
 - For production, consider environment variables or config files to secure sensitive data.
 - Static HTML files are served from resources/public/ folder.
-
----
 
