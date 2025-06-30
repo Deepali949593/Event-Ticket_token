@@ -37,10 +37,10 @@ and book tickets with QR code generation and email notifications.
 <img src="src/main/resources/public/img/ss4.png" alt="Booking Step 1" width="50%"/>
 <br/>
 
-<img src="src/main/resources/public/img/ss5.png" alt="Booking Step 2" width="50%"/>
+<img src="src/main/resources/public/img/ss5.png" alt="Booking Step 2" width="30%"/>
 <br/>
 
-<img src="src/main/resources/public/img/ss6.png" alt="Booking Step 3" width="50%"/>
+<img src="src/main/resources/public/img/ss6.png" alt="Booking Step 3" width="30%"/>
 
 
 ---
