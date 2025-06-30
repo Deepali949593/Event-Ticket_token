@@ -1,4 +1,5 @@
-# Event Ticket Booking System
+'''java
+### Event Ticket Booking System
 
 A simple Java-based web application using Javalin framework and MongoDB for backend, allowing users to register, login, view events
 and book tickets with QR code generation and email notifications.
@@ -111,11 +112,10 @@ public static MongoDatabase getDatabase() {
     return database;
 }
 
-Sample Code Snippets
+
+**Sample Code Snippets**
 Password Generation
-java
-Copy
-Edit
+
 private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 private static final SecureRandom random = new SecureRandom();
 
@@ -126,10 +126,9 @@ private static String generateRandomPassword(int length) {
     }
     return sb.toString();
 }
+
+
 Sending Email with Password
-java
-Copy
-Edit
 public static void sendEmail(String to, String password) {
     final String from = "your.email@gmail.com";
     final String appPassword = "your-app-password";
@@ -157,10 +156,9 @@ public static void sendEmail(String to, String password) {
         e.printStackTrace();
     }
 }
+
+
 Generating QR Code
-java
-Copy
-Edit
 public static String generateQRCode(String text, String email) {
     try {
         QRCodeWriter writer = new QRCodeWriter();
@@ -176,17 +174,13 @@ public static String generateQRCode(String text, String email) {
         return null;
     }
 }
+
+
 Notes
-Make sure MongoDB is running and accessible before starting the server.
-
-Replace the email credentials with your own for email functionality.
-
-For production, consider environment variables or config files to secure sensitive data.
-
-Static HTML files are served from resources/public/ folder.
-
-yaml
-Copy
-Edit
+- Make sure MongoDB is running and accessible before starting the server.
+- Replace the email credentials with your own for email functionality.
+- For production, consider environment variables or config files to secure sensitive data.
+- Static HTML files are served from resources/public/ folder.
 
 ---
+
