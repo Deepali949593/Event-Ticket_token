@@ -30,6 +30,13 @@ and book tickets with QR code generation and email notifications.
 - Maven for dependency management
 
 
+## Screenshots
+
+Here are some screenshots of the Event Ticket Booking System UI:
+
+| Registration Form | Login Page | Events List | Booking Confirmation |
+|-------------------|------------|-------------|----------------------|
+| ![Registration](img/ss1.png) | ![Login](img/ss2.png) | ![Events](img/ss3.png) | ![Booking](img/ss4.png) |
 
 
 ````
