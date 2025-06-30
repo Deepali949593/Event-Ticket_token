@@ -1,6 +1,3 @@
-Sure! Here's a detailed README.md file for your Event Ticket Booking system project, covering everything from setup, code structure, QR code generation, email sending, and MongoDB connection.
-
----
 
 ```markdown
 # Event Ticket Booking System
