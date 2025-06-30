@@ -30,37 +30,6 @@ A simple Java-based web application using **Javalin** framework and **MongoDB** 
 
 ---
 
-## Project Structure
-
-```
-
-src/
-└─ main/
-└─ java/
-└─ org/
-└─ example/
-└─ eventsystem/
-├─ App.java                     # Main application to start Javalin server
-├─ controller/
-│   ├─ AuthController.java      # Handles user registration/login
-│   └─ EventController.java     # Handles event listing & ticket booking
-├─ dao/
-│   ├─ UserDAO.java             # MongoDB operations for users
-│   └─ EventDAO.java            # Provides event data (mock or DB)
-├─ model/
-│   ├─ User.java                # User data model
-│   └─ Event.java               # Event data model
-├─ service/
-│   ├─ EmailService.java        # Handles SMTP email sending
-│   └─ QRCodeService.java       # Generates QR codes as PNG images
-└─ db/
-└─ DBConnection.java       # MongoDB connection class
-resources/
-└─ public/
-├─ register.html                      # User registration form
-├─ login.html                         # User login form
-├─ events.html                        # Events listing page
-└─ book.html                         # Ticket booking form
 
 ````
 
