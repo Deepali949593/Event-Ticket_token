@@ -30,19 +30,14 @@ and book tickets with QR code generation and email notifications.
 - Maven for dependency management
 
 
-## Screenshots
+![Registration](src/main/resources/public/img/ss1.png)
 
-### Registration Form
-![Registration](img/ss1.png)
+![Login](src/main/resources/public/img/ss2.png)
 
-### Login Page
-![Login](img/ss2.png)
+![Events](src/main/resources/public/img/ss3.png)
 
-### Events List
-![Events](img/ss3.png)
+![Booking](src/main/resources/public/img/ss4.png)
 
-### Booking Confirmation
-![Booking](img/ss4.png)
 
 
 ---
