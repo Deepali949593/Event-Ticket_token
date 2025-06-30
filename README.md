@@ -5,7 +5,7 @@
 A simple Java-based web application using Javalin framework and MongoDB for backend, allowing users to register, login, view events
 and book tickets with QR code generation and email notifications.
 
----
+
 
 ## Features
 
@@ -18,7 +18,7 @@ and book tickets with QR code generation and email notifications.
 - MongoDB used to store user data
 - Simple UI with HTML forms and JavaScript fetch API
 
----
+
 
 ## Technologies Used
 
@@ -29,7 +29,7 @@ and book tickets with QR code generation and email notifications.
 - ZXing library for QR code generation
 - Maven for dependency management
 
----
+
 
 
 ````
