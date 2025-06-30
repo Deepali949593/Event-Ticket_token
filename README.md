@@ -1,5 +1,4 @@
 
-```markdown
 # Event Ticket Booking System
 
 A simple Java-based web application using Javalin framework and MongoDB for backend, allowing users to register, login, view events
