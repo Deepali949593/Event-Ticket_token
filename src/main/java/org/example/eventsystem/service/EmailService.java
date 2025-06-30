@@ -53,6 +53,50 @@ public class EmailService {
         }
     }
 
+    public static void sendEmailWithQR(String to, String eventName, String qrPath) {
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.starttls.enable", "true");
+
+        Session session = Session.getInstance(props, new Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(FROM_EMAIL, APP_PASSWORD);
+            }
+        });
+
+        try {
+            MimeMessage msg = new MimeMessage(session);
+            msg.setFrom(new InternetAddress(FROM_EMAIL));
+            msg.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            msg.setSubject("Your Ticket for Event: " + eventName);
+
+            Multipart multipart = new MimeMultipart();
+
+            // Text part with event info
+            MimeBodyPart textPart = new MimeBodyPart();
+            textPart.setText("Thank you for booking!\nHere is your ticket QR code for the event: " + eventName);
+
+            // Attachment part with QR code image
+            MimeBodyPart attachmentPart = new MimeBodyPart();
+            attachmentPart.attachFile(new File(qrPath));
+
+            multipart.addBodyPart(textPart);
+            multipart.addBodyPart(attachmentPart);
+
+            msg.setContent(multipart);
+
+            Transport.send(msg);
+            System.out.println("Event ticket email with QR sent to " + to);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Failed to send event ticket email to " + to);
+        }
+    }
+
+
     // Optionally, keep this method if you want a simpler email without QR
     public static void sendEmail(String to, String password) {
         // Your existing simple email send method here

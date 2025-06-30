@@ -1,43 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 15px;
+            background: #fafafa;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #searchInput {
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 25px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        .event-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .event-img {
+            width: 220px;
+            height: 140px;
+            object-fit: cover;
+        }
+        .event-content {
+            padding: 15px 20px;
+            flex: 1;
+        }
+        .event-content h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        .event-content p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .event-actions {
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+        }
+        .btn {
+            background-color: rgba(120, 82, 241, 0.6);
+            color: rgba(217, 211, 228, 0.6);
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        p.error-message {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+        p.no-events {
+            text-align: center;
+            font-style: italic;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-<h2>Events</h2>
-<ul id="events-list"></ul>
+
+<h2>Upcoming Events</h2>
+<input type="text" id="searchInput" placeholder="Search events by name..." />
+
+<div id="events-list"></div>
 
 <script>
+    let allEvents = [];
+
+    // Fetch events from backend
     fetch('/events')
-        .then(response => {
-            if (!response.ok) throw new Error("Network response was not ok");
-            return response.json();
-        })
+        .then(res => res.json())
         .then(events => {
-            const list = document.getElementById('events-list');
-            list.innerHTML = "";  // Clear if anything exists
-
-            if (events.length === 0) {
-                list.textContent = "No events available.";
-                return;
-            }
-
-            events.forEach(event => {
-                const li = document.createElement('li');
-                li.textContent = `${event.name} (${event.date}) `;
-
-                const link = document.createElement('a');
-                link.href = `book.html?eventId=${event.id}`;
-                link.textContent = "Book Ticket";
-
-                li.appendChild(link);
-                list.appendChild(li);
-            });
+            allEvents = events;
+            renderEvents(events);
         })
-        .catch(error => {
-            console.error('Error fetching events:', error);
-            document.getElementById('events-list').textContent = "Failed to load events.";
+        .catch(err => {
+            console.error(err);
+            document.getElementById('events-list').innerHTML = "<p class='error-message'>Failed to load events.</p>";
         });
+
+    function renderEvents(events) {
+        const container = document.getElementById('events-list');
+        container.innerHTML = "";
+        if (events.length === 0) {
+            container.innerHTML = "<p class='no-events'>No events found.</p>";
+            return;
+        }
+        events.forEach(event => {
+            const div = document.createElement('div');
+            div.classList.add('event-card');
+            div.innerHTML = `
+                <img src="${event.imageUrl || 'https://via.placeholder.com/220x140?text=No+Image'}" alt="${event.name}" class="event-img" />
+                <div class="event-content">
+                    <h3>${event.name}</h3>
+                    <p><strong>Date:</strong> ${event.date}</p>
+                    <p>${event.description || ''}</p>
+                    <p><strong>Available Tokens:</strong> ${event.availableTokens}</p>
+                </div>
+                <div class="event-actions">
+                    <a href="book.html?eventId=${event.id}" class="btn">Book Ticket</a>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+    }
+
+    // Search event by name
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const term = this.value.toLowerCase();
+        const filtered = allEvents.filter(e => e.name.toLowerCase().includes(term));
+        renderEvents(filtered);
+    });
 </script>
+
 </body>
 </html>

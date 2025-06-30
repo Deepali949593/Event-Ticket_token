@@ -1,0 +1,153 @@
+/* Global Style */
+body {
+    background: linear-gradient(135deg, #6f42c1, #9f7aea);
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('img/bgimg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Form Container */
+.form-container {
+    background-color: #2d2a4a;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+}
+
+/* Title */
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+/* Input Fields */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    border: none;
+    border-radius: 6px;
+    background-color: #ece9f1;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.form-container button {
+    background-color: #6f42c1;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    transition: background 0.3s;
+}
+
+.form-container button:hover {
+    background-color: #563d7c;
+}
+
+/* Events List Styling */
+.events-container {
+    background-color: #2d2a4a;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.events-container h2 {
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.event-list {
+    list-style: none;
+    padding: 0;
+}
+
+.event-card {
+    background-color: #403d5a;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: scale(1.03);
+}
+
+.event-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+.event-card p {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #ddd;
+}
+
+.event-card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #783ee4;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.event-card .btn:hover {
+    background-color: #563d7c;
+}
+
+/* Search Bar */
+.search-input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 0 8px #8e44ad;
+}
+
+/* Already included Hover (from previous reply) */
+.event-card {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.event-card:hover {
+    transform: scale(1.03);
+    background-color: #4e4b66;
+}
